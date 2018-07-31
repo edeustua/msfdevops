@@ -14,13 +14,13 @@ def mean(num_lst):
     Parameters
     ----------
 
-    num_lst: list
+    num_lst : list or tuple
         The list to take the average of
 
     Returns
     -------
 
-    ret: float
+    ret : float
         The mean of a list
 
     Examples
@@ -30,10 +30,18 @@ def mean(num_lst):
     3.0
 
     """
-    ret = sum(num_lst) / len(num_lst)
-    return ret
-    #acumm = 0
-    #for i in num_lst:
-    #    acumm += i
+    # Check that user passes list
+    #if not isinstance(num_lst, list) and not isinstance(num_lst, tuple):
+    if not isinstance(num_lst, list):
+        raise TypeError('Input must be a type list')
 
-    #return acumm / len(num_lst)
+    # Check list length
+    if len(num_lst) == 0:
+        raise ZeroDivisionError('Cannot calculate mean of empty list')
+
+    try:
+        ret = sum(num_lst) / len(num_lst)
+    except TypeError:
+        raise TypeError('Values of list must be type int or float')
+
+    return ret

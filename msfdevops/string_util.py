@@ -34,10 +34,16 @@ def title_string(in_str):
 
     """
 
-    tmp_s = in_str.lower()
+    if not isinstance(in_str, str):
+        raise TypeError('Input must be a string')
+
+    if in_str == "":
+        return ""
+
+    lower_case = in_str.lower()
 
     new_s = ""
-    for word in tmp_s.split():
+    for word in lower_case.split():
         new_s += word[0].upper() + word[1:] + ' '
 
     return new_s[0:-1]
