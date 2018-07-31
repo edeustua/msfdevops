@@ -30,7 +30,7 @@ def title_string(in_str):
     'This Is A String To Be Converted'
 
     >>> title_string("this should be a title some time")
-    'This Should Be a Title Some Time'
+    'This Should Be A Title Some Time'
 
     """
 
