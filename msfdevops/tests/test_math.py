@@ -15,7 +15,7 @@ def num_list_3():
     ( [1, 2, 3, 4, 5], 3 ),
     ( [0, 2, 4, 6], 3 ),
     ( [1, 2, 3, 4], 2.5),
-    ( list(range(1, 10000000)), 10000000/2),
+    ( list(range(1, 100000)), 100000/2),
     ])
 def test_many(num_lst, expected_mean):
     #assert math.mean(num_lst) == expected_mean
